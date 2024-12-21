@@ -535,7 +535,7 @@ input[type=submit]:hover {
 }
 .watch-word h4{
     /*background-color: #221d53;*/
-    background-color: #FF0000;
+    background-color: #7C0D0E;
     border-radius: 35px 0px 35px 0px;
     margin-top: -18px;
     color: white;
@@ -545,14 +545,14 @@ input[type=submit]:hover {
 }
 .watch-word h5{
     /*color: #094486;*/
-    color: #FF0000;
+    color: #7C0D0E;
 }
 .watch-word p{
     margin-top: 10px;
 }
 .watch-word span{
     /*color: #094486;*/
-    color: #FF0000;
+    color: #7C0D0E;
     font-weight: 600;
 }
 /* WATCH-WORD */
