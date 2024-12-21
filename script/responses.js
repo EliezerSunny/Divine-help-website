@@ -8,6 +8,8 @@ function getBotResponse(input) {
         return "I'm here!";
     } else if (input == "Heart clicked!") {
         return "Thank you!";
+    } else if (input == "❤️") {
+        return "Thank you! 🥰";
     } if (input == "Hello") {
         return "Hello there!";
     } else if (input == "hello") {
