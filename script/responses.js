@@ -118,5 +118,32 @@ function getBotResponse(input) {
     }
     
     
+    
+    
+    
+    //seasons greetings 
+    if (input == "Merry christmas") {
+        return "Same Wishes!!! 🎉";
+    } else if (input == "Happy new year") {
+        return "Same Wishes!!! 🎉";
+    } else if (input == "Merry christmas and happy new year") {
+        return "Same Wishes!!! 🎉";
+    } else if (input == "Seasons greetings") {
+        return "Same Wishes!!! 🎉";
+    } else if (input == "Season's greetings") {
+        return "Same Wishes!!! 🎉";
+    } else if (input == "Season`s greetings") {
+        return "Same Wishes!!! 🎉";
+    } else if (input == "Seasons Greetings") {
+        return "Same Wishes!!! 🎉";
+    } else if (input == "Seasons greeting") {
+        return "Same Wishes!!! 🎉";
+    } else if (input == "Seasons Greeting") {
+        return "Same Wishes!!! 🎉";
+    } 
+    
+    
+    
+    
   
 }
