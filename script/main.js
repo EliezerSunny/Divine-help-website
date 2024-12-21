@@ -14,7 +14,7 @@ let currentDate = day + "-" + month + "-" + year;
 if (month == "12" || month == "1") {
     // LOGO
 var img = document.createElement("img");
-img.src = "img/Divine-help-logo2.png";
+img.src = "img/divine-help-logo2.png";
 var src = document.getElementById("logo");
 src.appendChild(img);
 
@@ -22,7 +22,7 @@ src.appendChild(img);
 } else {
     // LOGO
 var img = document.createElement("img");
-img.src = "img/Divine-help-logo3.png";
+img.src = "img/divine-help-logo3.png";
 var src = document.getElementById("logo");
 src.appendChild(img);
 
@@ -33,7 +33,7 @@ src.appendChild(img);
 if (month == "12" || month == "1") {
 // LOGO FOOTER
 var img = document.createElement("img");
-img.src = "img/Divine-help-logo2.png";
+img.src = "img/divine-help-logo2.png";
 var src = document.getElementById("logo2");
 src.appendChild(img);
 
@@ -41,7 +41,7 @@ src.appendChild(img);
 } else {
     // LOGO FOOTER
 var img = document.createElement("img");
-img.src = "img/Divine-help-logo3.png";
+img.src = "img/divine-help-logo3.png";
 var src = document.getElementById("logo2");
 src.appendChild(img);
 
