@@ -37,16 +37,20 @@ myEvent();
 // 
     // Get the current count from localStorage
     let visitCount = localStorage.getItem('visitCount');
+    console.log("Current visit count from localStorage:", visitCount);  // Debugging log
 
     // Check if there's a previous count
     if (visitCount) {
       visitCount = parseInt(visitCount) + 1; // Increment the count
+      console.log("Incremented visit count:", visitCount);  // Debugging log
     } else {
       visitCount = 1; // Initialize if no count exists
+      console.log("First visit, initialized visit count to 1");  // Debugging log
     }
 
     // Save the updated count back to localStorage
     localStorage.setItem('visitCount', visitCount);
+    console.log("Updated visit count stored in localStorage:", visitCount);  // Debugging log
 
     // Display the count on the page
     document.getElementById('visitCount').textContent = visitCount;
