@@ -43,7 +43,7 @@ console.log("Current visit count from localStorage:", visitCount); // Debugging 
 
 // Check if there's a previous count
 if (visitCount) {
-  visitCount = parseInt(visitCount) + 1; // Increment the count
+  visitCount = parseInt(visitCount, 10) + 1; // Increment the count
   console.log("Incremented visit count:", visitCount); // Debugging log
 } else {
   visitCount = 1; // Initialize if no count exists
@@ -55,9 +55,14 @@ localStorage.setItem('visitCount', visitCount);
 console.log("Updated visit count stored in localStorage:", visitCount); // Debugging log
 
 // Display the count on the page
-document.querySelectorAll('.count').forEach(element => {
-  element.textContent = visitCount; // Update the content of each matching element
-});
+const countElements = document.querySelectorAll('.count'); // Select elements with the 'count' class
+if (countElements.length > 0) {
+  countElements.forEach(element => {
+    element.textContent = visitCount; // Update the content of each matching element
+  });
+} else {
+  console.error("No elements found with the 'count' class.");
+}
  
   
   
