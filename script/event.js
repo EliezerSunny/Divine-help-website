@@ -11,8 +11,8 @@ let year = date.getFullYear();
 let currentDate = day + "-" + month + "-" + year;
 
 
-if (month == "12" || month == "1") {
-    document.getElementById("greetings").innerHTML = "Merry Christmas & Happy New Year!!! &#127881;&#x1F389; 🎇" + day;
+if (["12", "1"].includes(month)) {
+    document.getElementById("greetings").innerHTML = "Merry Christmas & Happy New Year!!! 🎉🎇🧑‍🎄";
 } else if (month == "11") {
     document.getElementById("greetings").innerHTML = "Anniversary! LOADING... &#127881;&#x1F389;";
 } else if (month == "12") {
@@ -34,4 +34,25 @@ if (month == "12" || month == "1") {
 }
 
 myEvent();
+
+
+
+
+
+// YouTube video ID (from the YouTube video URL, e.g., https://www.youtube.com/watch?v=dQw4w9WgXcQ)
+var videoId = "6CP08HOcWGY";  // Replace with the ID of the video you want to embed
+
+// Create an iframe element
+var iframe = document.createElement("iframe");
+
+// Set the iframe attributes
+iframe.setAttribute("width", "560");
+iframe.setAttribute("height", "315");
+iframe.setAttribute("src", "https://www.youtube.com/embed/" + videoId);
+iframe.setAttribute("frameborder", "0");
+iframe.setAttribute("allowfullscreen", "true");
+
+// Append the iframe to the container
+document.getElementById("video-container").appendChild(iframe);
+
 
