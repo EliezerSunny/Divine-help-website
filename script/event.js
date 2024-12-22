@@ -57,7 +57,7 @@ iframe.setAttribute("allowfullscreen", "true");
 // Set the iframe attributes 2
 iframee.setAttribute("width", "560");
 iframee.setAttribute("height", "315");
-iframee.setAttribute("src", "https://www.youtube.com/embed/" + videoIdd + "?autoplay=1");
+iframee.setAttribute("src", "https://www.youtube.com/embed/" + videoIdd);
 iframee.setAttribute("frameborder", "0");
 iframee.setAttribute("allowfullscreen", "true");
 
