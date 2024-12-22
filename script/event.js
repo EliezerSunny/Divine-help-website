@@ -34,33 +34,24 @@ if (month == "12" || month == "1") {
 myEvent();
 
 
+// Fw-0wFkVhWk
 
 
-// YouTube video IDs
-  var firstVideoId = "6CP08HOcWGY";
-  var secondVideoId = "Fw-0wFkVhWk";
+// YouTube video ID (from the YouTube video URL, e.g., https://www.youtube.com/watch?v=dQw4w9WgXcQ)
+var videoId = "6CP08HOcWGY"; // Replace with the ID of the video you want to embed
 
-  // Function to create and append an iframe
-  function createAndAppendIframe(videoId, containerId, autoplay = false) {
-    // Create an iframe element
-    var iframe = document.createElement("iframe");
+// Create an iframe element
+var iframe = document.createElement("iframe");
 
-    // Set the iframe attributes
-    iframe.setAttribute("width", "560");
-    iframe.setAttribute("height", "315");
-    iframe.setAttribute(
-      "src",
-      `https://www.youtube.com/embed/${videoId}${autoplay ? "?autoplay=1" : ""}`
-    );
-    iframe.setAttribute("frameborder", "0");
-    iframe.setAttribute("allowfullscreen", "true");
+// Set the iframe attributes
+iframe.setAttribute("width", "560");
+iframe.setAttribute("height", "315");
+iframe.setAttribute("src", "https://www.youtube.com/embed/" + videoId + "?autoplay=1"); // Add autoplay=1 to the URL
+iframe.setAttribute("frameborder", "0");
+iframe.setAttribute("allow", "autoplay; encrypted-media"); // Allow autoplay
+iframe.setAttribute("allowfullscreen", "true");
 
-    // Append the iframe to the container
-    document.getElementById(containerId).appendChild(iframe);
-  }
-
-  // Create and append iframes
-  createAndAppendIframe(firstVideoId, "video-container", true);
-  createAndAppendIframe(secondVideoId, "video-containerr");
-
-
+// Append the iframe to the container
+document.getElementById("video-container").appendChild(iframe);
+  
+  
