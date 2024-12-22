@@ -36,37 +36,31 @@ myEvent();
 
 
 
-// YouTube video ID (from the YouTube video URL, e.g., https://www.youtube.com/watch?v=dQw4w9WgXcQ)
-var videoId = "6CP08HOcWGY";
-var videoIdd = "Fw-0wFkVhWk";
-  // Replace with the ID of the video you want to embed
+// YouTube video IDs
+  var firstVideoId = "6CP08HOcWGY";
+  var secondVideoId = "Fw-0wFkVhWk";
 
-// Create an iframe element
-var iframe = document.createElement("iframe");
-// Create an iframe element
-var iframee = document.createElement("iframee");
+  // Function to create and append an iframe
+  function createAndAppendIframe(videoId, containerId, autoplay = false) {
+    // Create an iframe element
+    var iframe = document.createElement("iframe");
 
-// Set the iframe attributes
-iframe.setAttribute("width", "560");
-iframe.setAttribute("height", "315");
-iframe.setAttribute("src", "https://www.youtube.com/embed/" + videoId + "?autoplay=1");
-iframe.setAttribute("frameborder", "0");
-iframe.setAttribute("allowfullscreen", "true");
+    // Set the iframe attributes
+    iframe.setAttribute("width", "560");
+    iframe.setAttribute("height", "315");
+    iframe.setAttribute(
+      "src",
+      `https://www.youtube.com/embed/${videoId}${autoplay ? "?autoplay=1" : ""}`
+    );
+    iframe.setAttribute("frameborder", "0");
+    iframe.setAttribute("allowfullscreen", "true");
 
-//
-// Set the iframe attributes 2
-iframee.setAttribute("width", "560");
-iframee.setAttribute("height", "315");
-iframee.setAttribute("src", "https://www.youtube.com/embed/" + videoIdd);
-iframee.setAttribute("frameborder", "0");
-iframee.setAttribute("allowfullscreen", "true");
+    // Append the iframe to the container
+    document.getElementById(containerId).appendChild(iframe);
+  }
 
-
-
-// Append the iframe to the container
-document.getElementById("video-container").appendChild(iframe);
-
-// Append the iframe to the container
-document.getElementById("video-containerr").appendChild(iframee);
+  // Create and append iframes
+  createAndAppendIframe(firstVideoId, "video-container", true);
+  createAndAppendIframe(secondVideoId, "video-containerr");
 
 
