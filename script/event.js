@@ -12,7 +12,7 @@ let currentDate = day + "-" + month + "-" + year;
 
 
 if (month == "12" || month == "1") {
-    document.getElementById("greetings").innerHTML = "Merry Christmas & Happy New Year!!! &#127881;&#x1F389; 🎇" + day;
+    document.getElementById("greetings").innerHTML = "Merry Christmas & Happy New Year!!! &#127881;&#x1F389; 🎇" + date;
 } else if (month == "11") {
     document.getElementById("greetings").innerHTML = "Anniversary! LOADING... &#127881;&#x1F389;";
 } else if (month == "12") {
