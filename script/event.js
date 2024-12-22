@@ -53,11 +53,8 @@ myEvent();
     console.log("Updated visit count stored in localStorage:", visitCount);  // Debugging log
 
     // Display the count on the page
-    document.getElementById('visitCount').textContent = visitCount;
-  
-  
-  
-  
+    document.querySelectorAll('.count').textContent = visitCount;
+ 
   
   
   
