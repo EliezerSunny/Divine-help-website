@@ -34,8 +34,30 @@ if (month == "12" || month == "1") {
 myEvent();
 
 
-// Fw-0wFkVhWk
+// 
+    // Get the current count from localStorage
+    let visitCount = localStorage.getItem('visitCount');
 
+    // Check if there's a previous count
+    if (visitCount) {
+      visitCount = parseInt(visitCount) + 1; // Increment the count
+    } else {
+      visitCount = 1; // Initialize if no count exists
+    }
+
+    // Save the updated count back to localStorage
+    localStorage.setItem('visitCount', visitCount);
+
+    // Display the count on the page
+    document.getElementById('visitCount').textContent = visitCount;
+  
+  
+  
+  
+  
+  
+  
+  
 
 // YouTube video ID (from the YouTube video URL, e.g., https://www.youtube.com/watch?v=dQw4w9WgXcQ)
 var videoId = "6CP08HOcWGY"; // Replace with the ID of the video you want to embed

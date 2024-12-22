@@ -5,6 +5,13 @@
 }
 
 
+ .count {
+      font-size: 2em;
+      font-weight: bold;
+      color: #007BFF;
+    }
+    
+    
 
 /* Styling for the Christmas video container */
         #video-container {
