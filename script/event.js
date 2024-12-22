@@ -37,32 +37,38 @@ myEvent();
 
 
 // 
+    
     // Get the current count from localStorage
 let visitCount = localStorage.getItem('visitCount');
-console.log("Current visit count from localStorage:", visitCount); // Debugging log
 
 // Check if there's a previous count
 if (visitCount) {
   visitCount = parseInt(visitCount, 10) + 1; // Increment the count
-  console.log("Incremented visit count:", visitCount); // Debugging log
 } else {
   visitCount = 1; // Initialize if no count exists
-  console.log("First visit, initialized visit count to 1"); // Debugging log
 }
 
 // Save the updated count back to localStorage
 localStorage.setItem('visitCount', visitCount);
-console.log("Updated visit count stored in localStorage:", visitCount); // Debugging log
 
-// Display the count on the page
-const countElements = document.querySelectorAll('.count'); // Select elements with the 'count' class
-if (countElements.length > 0) {
-  countElements.forEach(element => {
-    element.textContent = visitCount; // Update the content of each matching element
+// Display the visit count
+document.querySelectorAll('.count').forEach(element => {
+  element.textContent = visitCount;
+});
+
+// Add reset button functionality
+const resetButton = document.getElementById('resetButton');
+resetButton.addEventListener('click', () => {
+  // Clear visitCount from localStorage
+  localStorage.removeItem('visitCount');
+
+  // Reset displayed count to 0
+  document.querySelectorAll('.count').forEach(element => {
+    element.textContent = 0;
   });
-} else {
-  console.error("No elements found with the 'count' class.");
-}
+
+  console.log("Visit count reset successfully!");
+});
  
   
   
