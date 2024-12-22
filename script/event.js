@@ -11,7 +11,7 @@ let year = date.getFullYear();
 let currentDate = day + "-" + month + "-" + year;
 
 
-if (month === "12" || month === "1") {
+if (month == "12" || month == "1") {
     document.getElementById("greetings").innerHTML = "Happy Anniversary!!! 🎉, Merry Christmas & Happy New Year!!! 🎇🧑‍🎄🎄";
 } else if (month == "11") {
     document.getElementById("greetings").innerHTML = "Anniversary! LOADING... &#127881;&#x1F389;";
