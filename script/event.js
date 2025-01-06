@@ -73,10 +73,11 @@ resetButton.addEventListener('click', () => {
   
   
   
-  
+  // f2oxGYpuLkw 👉 praise 
+// 6CP08HOcWGY
 
 // YouTube video ID (from the YouTube video URL, e.g., https://www.youtube.com/watch?v=dQw4w9WgXcQ)
-var videoId = "6CP08HOcWGY"; // Replace with the ID of the video you want to embed
+var videoId = "f2oxGYpuLkw"; // Replace with the ID of the video you want to embed
 
 // Create an iframe element
 var iframe = document.createElement("iframe");
