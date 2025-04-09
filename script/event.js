@@ -15,21 +15,21 @@ if (month == "12" || month == "1") {
     document.getElementById("greetings").innerHTML = "Happy Anniversary!!! 🎉, Merry Christmas & Happy New Year!!! 🎇🧑‍🎄🎄";
 } else if (month == "11") {
     document.getElementById("greetings").innerHTML = "Anniversary! LOADING... &#127881;&#x1F389;";
-} else if (currentDate == "08-03-2025") {
+} else if (currentDate == "08-3-2025") {
     document.getElementById("greetings").innerHTML = "Happy Mother's Day!!! &#127881;&#x1F389;";
-}  else if (currentDate == "09-04-2025") {
+}  else if (currentDate == "09-4-2025") {
     document.getElementById("greetings").innerHTML = "Happy Easter Sunday!!! &#127881;&#x1F389;";
-} else if (currentDate == "10-04-2025") {
+} else if (currentDate == "10-4-2025") {
     document.getElementById("greetings").innerHTML = "Happy Easter Monday!!! &#127881;&#x1F389;";
-} else if (currentDate == "27-05-2025") {
+} else if (currentDate == "27-5-2025") {
     document.getElementById("greetings").innerHTML = "Happy Children's Day!!! &#127881;&#x1F389;";
-} else if (currentDate == "18-06-2025") {
+} else if (currentDate == "18-6-2025") {
     document.getElementById("greetings").innerHTML = "Happy Father's Day!!! &#127881;&#x1F389;";
-} else if (currentDate == "09-09-2025") {
+} else if (currentDate == "9-9-2025") {
     document.getElementById("greetings").innerHTML = "Happy Birthday, Eliazer!!! &#127881;&#x1F389;";
-} else if (currentDate === "09-04-2025") {
+} else if(currentDate == "9-4-2025") {
     document.getElementById("greetings").innerHTML = "Happy Birthday, Prophet Ezra Adetunji!!! &#127881;&#x1F389;";
-} else if (currentDate == "18-03-2025") {
+} else if (currentDate == "18-3-2025") {
     document.getElementById("greetings").innerHTML = "Happy Birthday, Mrs Rachael Adetunji!!! &#127881;&#x1F389;";
 }
 
