@@ -27,7 +27,7 @@ if (month == "12" || month == "1") {
     document.getElementById("greetings").innerHTML = "Happy Father's Day!!! &#127881;&#x1F389;";
 } else if (currentDate == "09-09-2025") {
     document.getElementById("greetings").innerHTML = "Happy Birthday, Eliazer!!! &#127881;&#x1F389;";
-} else if (currentDate == "09-04-2025") {
+} else if (currentDate === "09-04-2025") {
     document.getElementById("greetings").innerHTML = "Happy Birthday, Prophet Ezra Adetunji!!! &#127881;&#x1F389;";
 } else if (currentDate == "18-03-2025") {
     document.getElementById("greetings").innerHTML = "Happy Birthday, Mrs Rachael Adetunji!!! &#127881;&#x1F389;";
