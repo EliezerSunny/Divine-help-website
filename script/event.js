@@ -21,9 +21,9 @@ if (month == "12" || month == "1") {
     document.getElementById("greetings").innerHTML = "Happy Mother's Day!!! &#127881;&#x1F389;";
 } else if (currentDate == "18-3-2026") {
     document.getElementById("greetings").innerHTML = "Happy Birthday, Mrs Rachael Adetunji!!! &#127881;&#x1F389;";
-    
 } else if(currentDate == "9-4-2025") {
     document.getElementById("greetings").innerHTML = "Happy Birthday, Prophet Ezra Adetunji!!! &#127881;&#x1F389;";
+    
 } else if (currentDate == "20-4-2025") {
     document.getElementById("greetings").innerHTML = "Happy Easter Sunday!!! &#127881;&#x1F389;";
 } else if (currentDate == "21-4-2025") {
