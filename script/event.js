@@ -30,6 +30,8 @@ if (month == "12" || month == "1") {
     document.getElementById("greetings").innerHTML = "Happy Easter Monday!!! &#127881;&#x1F389;";
 } else if (currentDate == "27-5-2025") {
     document.getElementById("greetings").innerHTML = "Happy Children's Day!!! &#127881;&#x1F389;";
+} else if (currentDate == "13-6-2025") {
+    document.getElementById("greetings").innerHTML = "Happy Birthday, Mr Moses !!! &#127881;&#x1F389;";
 } else if (currentDate == "18-6-2025") {
     document.getElementById("greetings").innerHTML = "Happy Father's Day!!! &#127881;&#x1F389;";
 } else if (currentDate == "9-9-2025") {
