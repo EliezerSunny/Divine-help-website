@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>ChatGPT Style Bot</title>
+  <!-- <link rel="stylesheet" href="style.css"> -->
+  
+  <style>
+      /* style.css */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: #343541;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.chat-container {
+  width: 100%;
+  max-width: 500px;
+  background: #40414f;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(0,0,0,0.3);
+}
+
+.chat-header {
+  background: #202123;
+  color: white;
+  padding: 15px;
+  text-align: center;
+  font-size: 18px;
+  border-bottom: 1px solid #2f3035;
+}
+
+.chat-box {
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto;
+  max-height: 70vh;
+}
+
+.input-area {
+  display: flex;
+  background: #343541;
+  padding: 10px;
+  border-top: 1px solid #2f3035;
+}
+
+.input-area input {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  outline: none;
+  background: #40414f;
+  color: white;
+}
+
+.input-area button {
+  background: #10a37f;
+  border: none;
+  color: white;
+  padding: 10px 15px;
+  margin-left: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.user-message, .bot-message {
+  margin-bottom: 12px;
+  padding: 12px;
+  border-radius: 8px;
+  max-width: 80%;
+  line-height: 1.4;
+  white-space: pre-line;
+}
+
+.user-message {
+  background: #2a2b32;
+  align-self: flex-end;
+  color: white;
+}
+
+.bot-message {
+  background: #444654;
+  align-self: flex-start;
+  color: #ececec;
+}
+  </style>
+  
+</head>
+<body>
+  <div class="chat-container">
+    <div class="chat-header">AI Chat</div>
+    <div class="chat-box" id="chat-box">
+      <div class="bot-message">Hello! Ask me anything.</div>
+    </div>
+    <div class="input-area">
+      <input type="text" id="user-input" placeholder="Type a message..." onkeydown="if(event.key==='Enter') sendMessage()">
+      <button onclick="sendMessage()">Send</button>
+    </div>
+  </div>
+  <!-- <script src="script.js"></script> -->
+  
+  <script>
+      // script.js
+function sendMessage() {
+  const input = document.getElementById('user-input');
+  const chatBox = document.getElementById('chat-box');
+  const userText = input.value.trim();
+
+  if (userText === '') return;
+
+  const userMsg = document.createElement('div');
+  userMsg.className = 'user-message';
+  userMsg.innerText = userText;
+  chatBox.appendChild(userMsg);
+
+  input.value = '';
+  chatBox.scrollTop = chatBox.scrollHeight;
+
+  // Show typing animation
+  const botMsg = document.createElement('div');
+  botMsg.className = 'bot-message';
+  botMsg.innerText = 'Typing...';
+  chatBox.appendChild(botMsg);
+  chatBox.scrollTop = chatBox.scrollHeight;
+
+  // Simulate delay and show AI response
+  setTimeout(() => {
+    botMsg.innerText = getAIResponse(userText);
+    chatBox.scrollTop = chatBox.scrollHeight;
+  }, 1000);
+}
+
+function getAIResponse(msg) {
+  const lower = msg.toLowerCase();
+  if (lower.includes('hi') || lower.includes('hello')) {
+    return "Hey there! How can I assist you today?";
+  } else if (lower.includes('who are you')) {
+    return "I'm your friendly AI assistant, here to help!";
+  } else if (lower.includes('what is javascript')) {
+    return "JavaScript is a programming language used to create interactive effects within web browsers.";
+  } else if (lower.includes('bye')) {
+    return "Goodbye! Have a wonderful day!";
+  }
+  return "That's an interesting question! Let me think about it...";
+}
+  </script>
+</body>
+</html>
