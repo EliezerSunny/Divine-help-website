@@ -3,7 +3,7 @@ function getBotReply(text) {
       if (msg.includes("hello") || msg.includes("hi")) return "Hello! How can I help you today?";
       if (msg.includes("service") || msg.includes("program")) return "We have Sunday and midweek services. Would you like details?";
       if (msg.includes("wow") || msg.includes("oh")) return "Yeah 👍";
-      if (msg.includes("your name") || msg.includes("what is your name?")) return "My name is Divine AI 🤖";
+      if (msg.includes("your name") || msg.includes("who are you") || msg.includes("what is your name?")) return "I am Divine AI 🤖";
       if (msg.includes("amen") || msg.includes("amen in Jesus name")) return "Amen!!!";
       if (msg.includes("happy sunday")) return "Wish you many Sundays to come!!!";
       
