@@ -5,6 +5,7 @@ function getBotReply(text) {
       if (msg.includes("wow") || msg.includes("oh")) return "Yeah 👍";
       if (msg.includes("your name") || msg.includes("what is your name?")) return "My name is Divine AI 🤖";
       if (msg.includes("amen") || msg.includes("amen in Jesus name")) return "Amen!!!";
+      if (msg.includes("happy sunday")) return "Wish you many Sundays to come!!!";
       
       // history 
       if (msg.includes("founder") || msg.includes("establishment")) return "Prophet Ezra Adebayo Adetunji";

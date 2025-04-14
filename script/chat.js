@@ -27,7 +27,7 @@ function toggleChat() {
       // Typing effect
       const typingMsg = document.createElement('div');
       typingMsg.className = 'bot-message typing';
-      typingMsg.innerText = 'DivineBot is typing...';
+      typingMsg.innerText = 'DivineAI is typing...';
       chatBox.appendChild(typingMsg);
       chatBox.scrollTop = chatBox.scrollHeight;
 
