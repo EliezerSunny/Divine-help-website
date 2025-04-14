@@ -1,117 +1,146 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>ChatGPT Style Bot</title>
-  <!-- <link rel="stylesheet" href="style.css"> -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DivineBot</title>
+  <!-- <link rel="stylesheet" href="style.css" /> -->
   
   <style>
       /* style.css */
 body {
+  font-family: Arial, sans-serif;
   margin: 0;
-  font-family: 'Segoe UI', sans-serif;
-  background: #343541;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
+  padding: 0;
 }
 
-.chat-container {
-  width: 100%;
-  max-width: 500px;
-  background: #40414f;
-  border-radius: 8px;
-  display: flex;
+.chat-toggle {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #00796b;
+  padding: 10px;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  z-index: 1000;
+}
+
+.chat-toggle img {
+  width: 30px;
+  height: 30px;
+}
+
+.chat-widget {
+  position: fixed;
+  bottom: 80px;
+  right: 20px;
+  width: 300px;
+  background: #004d40;
+  border-radius: 10px;
+  display: none;
   flex-direction: column;
-  overflow: hidden;
-  box-shadow: 0 0 20px rgba(0,0,0,0.3);
+  box-shadow: 0 0 15px rgba(0,0,0,0.5);
+  z-index: 1000;
+  color: white;
 }
 
 .chat-header {
-  background: #202123;
-  color: white;
-  padding: 15px;
-  text-align: center;
-  font-size: 18px;
-  border-bottom: 1px solid #2f3035;
+  background: #00251a;
+  padding: 10px;
+  font-weight: bold;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
 }
 
-.chat-box {
-  flex: 1;
-  padding: 20px;
+.chat-messages {
+  max-height: 250px;
   overflow-y: auto;
-  max-height: 70vh;
-}
-
-.input-area {
-  display: flex;
-  background: #343541;
   padding: 10px;
-  border-top: 1px solid #2f3035;
+  background: #004d40;
 }
 
-.input-area input {
-  flex: 1;
-  padding: 10px;
-  border: none;
-  border-radius: 5px;
-  outline: none;
-  background: #40414f;
-  color: white;
-}
-
-.input-area button {
-  background: #10a37f;
-  border: none;
-  color: white;
-  padding: 10px 15px;
-  margin-left: 10px;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-.user-message, .bot-message {
-  margin-bottom: 12px;
-  padding: 12px;
-  border-radius: 8px;
+.bot-message, .user-message {
+  margin-bottom: 10px;
+  padding: 8px;
+  border-radius: 10px;
   max-width: 80%;
-  line-height: 1.4;
-  white-space: pre-line;
-}
-
-.user-message {
-  background: #2a2b32;
-  align-self: flex-end;
-  color: white;
+  word-wrap: break-word;
 }
 
 .bot-message {
-  background: #444654;
+  background: #00796b;
   align-self: flex-start;
-  color: #ececec;
+}
+
+.user-message {
+  background: #1de9b6;
+  align-self: flex-end;
+  text-align: right;
+  color: black;
+}
+
+.chat-input {
+  display: flex;
+  padding: 10px;
+  background: #00251a;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.chat-input input {
+  flex: 1;
+  padding: 8px;
+  border: none;
+  border-radius: 5px;
+  outline: none;
+}
+
+.chat-input button {
+  background: #1de9b6;
+  border: none;
+  padding: 8px;
+  margin-left: 5px;
+  border-radius: 5px;
+  cursor: pointer;
 }
   </style>
   
 </head>
 <body>
-  <div class="chat-container">
-    <div class="chat-header">AI Chat</div>
-    <div class="chat-box" id="chat-box">
-      <div class="bot-message">Hello! Ask me anything.</div>
+
+  <!-- Chat Toggle Button -->
+  <div class="chat-toggle" onclick="toggleChat()">
+    <img src="https://img.icons8.com/fluency/48/robot.png" alt="Chat Icon"/>
+  </div>
+
+  <!-- Chat Widget -->
+  <div class="chat-widget" id="chatWidget">
+    <div class="chat-header">
+      DivineBot
+      <span onclick="toggleChat()" style="float:right; cursor:pointer;">&times;</span>
     </div>
-    <div class="input-area">
-      <input type="text" id="user-input" placeholder="Type a message..." onkeydown="if(event.key==='Enter') sendMessage()">
-      <button onclick="sendMessage()">Send</button>
+    <div class="chat-messages" id="chatMessages">
+      <div class="bot-message">Hi! I'm <strong>DivineBot</strong></div>
+    </div>
+    <div class="chat-input">
+      <input type="text" id="userInput" placeholder="Tap 'Enter' to send" onkeydown="if(event.key==='Enter') sendMessage()" />
+      <button onclick="sendMessage()">➤</button>
     </div>
   </div>
+
   <!-- <script src="script.js"></script> -->
   
   <script>
       // script.js
+function toggleChat() {
+  const chatWidget = document.getElementById('chatWidget');
+  chatWidget.style.display = chatWidget.style.display === 'flex' ? 'none' : 'flex';
+}
+
 function sendMessage() {
-  const input = document.getElementById('user-input');
-  const chatBox = document.getElementById('chat-box');
+  const input = document.getElementById('userInput');
+  const chatBox = document.getElementById('chatMessages');
   const userText = input.value.trim();
 
   if (userText === '') return;
@@ -124,32 +153,20 @@ function sendMessage() {
   input.value = '';
   chatBox.scrollTop = chatBox.scrollHeight;
 
-  // Show typing animation
-  const botMsg = document.createElement('div');
-  botMsg.className = 'bot-message';
-  botMsg.innerText = 'Typing...';
-  chatBox.appendChild(botMsg);
-  chatBox.scrollTop = chatBox.scrollHeight;
-
-  // Simulate delay and show AI response
   setTimeout(() => {
-    botMsg.innerText = getAIResponse(userText);
+    const botMsg = document.createElement('div');
+    botMsg.className = 'bot-message';
+    botMsg.innerText = getBotReply(userText);
+    chatBox.appendChild(botMsg);
     chatBox.scrollTop = chatBox.scrollHeight;
-  }, 1000);
+  }, 800);
 }
 
-function getAIResponse(msg) {
-  const lower = msg.toLowerCase();
-  if (lower.includes('hi') || lower.includes('hello')) {
-    return "Hey there! How can I assist you today?";
-  } else if (lower.includes('who are you')) {
-    return "I'm your friendly AI assistant, here to help!";
-  } else if (lower.includes('what is javascript')) {
-    return "JavaScript is a programming language used to create interactive effects within web browsers.";
-  } else if (lower.includes('bye')) {
-    return "Goodbye! Have a wonderful day!";
-  }
-  return "That's an interesting question! Let me think about it...";
+function getBotReply(text) {
+  const msg = text.toLowerCase();
+  if (msg.includes("hello") || msg.includes("hi")) return "Hello! How can I help you today?";
+  if (msg.includes("service") || msg.includes("program")) return "We have Sunday and midweek services. Would you like details?";
+  return "I'm here to assist you with information about our church.";
 }
   </script>
 </body>
