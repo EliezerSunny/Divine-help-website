@@ -124,7 +124,7 @@ function getBotResponse(input) {
     
     
     //seasons greetings 
-    if (input == "Merry christmas") {
+   else if (input == "Merry christmas") {
         return "Same Wishes!!! 🎉";
     } else if (input == "Happy new year") {
         return "Same Wishes!!! 🎉";
@@ -149,7 +149,7 @@ function getBotResponse(input) {
     
     
     //Easter greetings 
-    if (input == "Happy Easter") {
+   else if (input == "Happy Easter") {
         return "Happy Easter! May the joy of Christ's resurrection fill your heart with hope, peace, and new beginnings. He is risen! 🎉";
     } else if (input == "Happy easter") {
         return "Happy Easter! May the joy of Christ's resurrection fill your heart with hope, peace, and new beginnings. He is risen! 🎉";
