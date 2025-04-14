@@ -26,6 +26,10 @@ if (month == "12" || month == "1") {
 } else if (currentDate == "13-4-2025") {
     document.getElementById("greetings").innerHTML = "Happy Palm Sunday!!! &#127881;&#x1F389;";
     
+} else if (currentDate == "18-4-2025") {
+    document.getElementById("greetings").innerHTML = "Happy Good Friday!!! &#127881;&#x1F389;";
+} else if (currentDate == "19-4-2025") {
+    document.getElementById("greetings").innerHTML = "Happy Holy Saturday!!! &#127881;&#x1F389;";
 } else if (currentDate == "20-4-2025") {
     document.getElementById("greetings").innerHTML = "Happy Easter Sunday!!! &#127881;&#x1F389;";
 } else if (currentDate == "21-4-2025") {
