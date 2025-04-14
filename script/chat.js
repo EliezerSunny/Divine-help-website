@@ -1,122 +1,42 @@
-// Collapsible
-var coll = document.getElementsByClassName("comment");
-
-for (let i = 0; i < coll.length; i++) {
-    coll[i].addEventListener("click", function () {
-        this.classList.toggle("active");
-
-        var content = this.nextElementSibling;
-
-        if (content.style.maxHeight) {
-            content.style.maxHeight = null;
-        } else {
-            content.style.maxHeight = content.scrollHeight + "px";
-        }
-
-    });
-}
-
-function getTime() {
-    let today = new Date();
-    hours = today.getHours();
-    minutes = today.getMinutes();
-
-    if (hours < 10) {
-        hours = "0" + hours;
+function toggleChat() {
+      const chatWidget = document.getElementById('chatWidget');
+      const timeBox = document.getElementById('chatTime');
+      if (chatWidget.style.display === 'flex') {
+        chatWidget.style.display = 'none';
+      } else {
+        chatWidget.style.display = 'flex';
+        const now = new Date();
+        const timeStr = now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+        timeBox.innerText = `Conversation started at ${timeStr}`;
+      }
     }
 
-    if (minutes < 10) {
-        minutes = "0" + minutes;
+    function sendMessage() {
+      const input = document.getElementById('userInput');
+      const chatBox = document.getElementById('chatMessages');
+      const userText = input.value.trim();
+      if (userText === '') return;
+
+      const userMsg = document.createElement('div');
+      userMsg.className = 'user-message';
+      userMsg.innerText = userText;
+      chatBox.appendChild(userMsg);
+      input.value = '';
+      chatBox.scrollTop = chatBox.scrollHeight;
+
+      // Typing effect
+      const typingMsg = document.createElement('div');
+      typingMsg.className = 'bot-message typing';
+      typingMsg.innerText = 'DivineBot is typing...';
+      chatBox.appendChild(typingMsg);
+      chatBox.scrollTop = chatBox.scrollHeight;
+
+      setTimeout(() => {
+        typingMsg.remove();
+        const botMsg = document.createElement('div');
+        botMsg.className = 'bot-message';
+        botMsg.innerText = getBotReply(userText);
+        chatBox.appendChild(botMsg);
+        chatBox.scrollTop = chatBox.scrollHeight;
+      }, 1200);
     }
-
-    let time = hours + ":" + minutes;
-    return time;
-}
-
-// Gets the first message
-function firstBotMessage() {
-    let firstMessage = "Hi! I'm DivineBot🤖"
-    document.getElementById("botStarterMessage").innerHTML = '<p class="botText"><span>' + firstMessage + '</span></p>';
-
-    let time = getTime();
-
-    $("#chat-timestamp").append(time);
-    document.getElementById("userInput").scrollIntoView(false);
-}
-
-firstBotMessage();
-
-// Retrieves the response
-function getHardResponse(userText) {
-    let botResponse = getBotResponse(userText);
-    let botHtml = '<p class="botText"><span>' + botResponse + '</span></p>';
-    $("#chatbox").append(botHtml);
-
-    document.getElementById("chat-bar-bottom").scrollIntoView(true);
-}
-
-//Gets the text text from the input box and processes it
-function getResponse() {
-    let userText = $("#textInput").val();
-
-    if (userText == "") {
-        userText = "";
-    }
-
-    let userHtml = '<p class="userText"><span>' + userText + '</span></p>';
-
-    $("#textInput").val("");
-    $("#chatbox").append(userHtml);
-    document.getElementById("chat-bar-bottom").scrollIntoView(true);
-
-    setTimeout(() => {
-        getHardResponse(userText);
-    }, 1000)
-
-}
-
-// Handles sending text via button clicks
-function buttonSendText(sampleText) {
-    let userHtml = '<p class="userText"><span>' + sampleText + '</span></p>';
-
-    $("#textInput").val("");
-    $("#chatbox").append(userHtml);
-    document.getElementById("chat-bar-bottom").scrollIntoView(true);
-
-    //Uncomment this if you want the bot to respond to this buttonSendText event
-    //  setTimeout(() => {
-    //     getHardResponse(sampleText);
-    // }, 1000)
-}
-
-function sendButton() {
-    getResponse();
-}
-
-//Heart button respond
-function heartButton() {
-    let userText = $("#textInput").val();
-
-    if (userText == "") {
-        userText = "Heart clicked!";
-    }
-
-    let userHtml = '<p class="userText"><span>' + userText + '</span></p>';
-
-    $("#textInput").val("");
-    $("#chatbox").append(userHtml);
-    document.getElementById("chat-bar-bottom").scrollIntoView(true);
-
-    setTimeout(() => {
-        getHardResponse(userText);
-    }, 1000)
-    
-}
-
-
-// Press enter to send a message
-$("#textInput").keypress(function (e) {
-    if (e.which == 13) {
-        getResponse();
-    }
-});
