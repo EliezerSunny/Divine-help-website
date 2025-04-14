@@ -147,5 +147,18 @@ function getBotResponse(input) {
     
     
     
+    
+    //Easter greetings 
+    if (input == "Happy Easter") {
+        return "Happy Easter! May the joy of Christ's resurrection fill your heart with hope, peace, and new beginnings. He is risen! 🎉";
+    } else if (input == "Happy easter") {
+        return "Happy Easter! May the joy of Christ's resurrection fill your heart with hope, peace, and new beginnings. He is risen! 🎉";
+    } else if (input == "happy easter") {
+        return "Happy Easter! May the joy of Christ's resurrection fill your heart with hope, peace, and new beginnings. He is risen! 🎉";
+    } 
+    
+    
+    
+    
   
 }
