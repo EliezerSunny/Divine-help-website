@@ -21,7 +21,7 @@ function getBotReply(text) {
       // Seasons Greatings
       if (msg.includes("merry christmas") || msg.includes("happy christmas")) return "May the joy of Christ's birth fill your heart with blessings, peace, and new beginnings. Christ is born!!!";
       if (msg.includes("easter") || msg.includes("Happy easter")) return "May the joy of Christ's resurrection fill your heart with hope, peace, and new beginnings. He is risen! 🎉";
-      if (msg.includes("new year") || msg.includes("Happy new year")) return "Wosh you many more! IJN";
+      if (msg.includes("new year") || msg.includes("Happy new year")) return "Wish you many more! IJN";
       
       return "I'm here to assist you with information about our church.";
     }
