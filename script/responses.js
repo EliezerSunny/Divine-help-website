@@ -115,9 +115,7 @@ function getBotResponse(input) {
         return "Prophet Ezra Adebayo Adetunji!";
     } else if (input == "What is the church name?") {
         return "O.I.M C&S Divine Help!";
-    } else {
-        return "Ooops!😟 Try asking something else. I'm under-development!";
-    }
+    } 
     
     
     
@@ -159,6 +157,10 @@ function getBotResponse(input) {
     
     
     
+    
+   else {
+        return "Ooops!😟 Try asking something else. I'm under-development!";
+    } 
     
   
 }
