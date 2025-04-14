@@ -6,7 +6,7 @@ function getBotReply(text) {
       if (msg.includes("your name") || msg.includes("who are you") || msg.includes("what is your name?")) return "I am Divine AI 🤖";
       if (msg.includes("amen") || msg.includes("amen in Jesus name")) return "Amen!!!";
       if (msg.includes("happy sunday")) return "Wish you many Sundays to come!!!";
-      if (msg.includes("God")) return "God is great!!!";
+      if (msg.includes("god")) return "God is great!!!";
       if (msg.includes("i love this") || msg.includes("i like this")) return "I'm glad you do. 🤗";
       if (msg.includes("goodnight") || msg.includes("i like this")) return "Have a wonderful dream! 😴";
       if (msg.includes("good afternoon")) return "To you too! How is your day going?";
