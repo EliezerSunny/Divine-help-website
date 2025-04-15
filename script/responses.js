@@ -1,6 +1,6 @@
 function getBotReply(text) {
       const msg = text.toLowerCase();
-      if (msg.includes("hello") || msg.includes("hi")) return "Hello! How can I help you today?";
+      if (msg.includes("hello") || msg.includes("hi") || msg.includes("hey")) return "Hello! How can I help you today?";
       if (msg.includes("service") || msg.includes("program")) return "We have Sunday and midweek services. Would you like details?";
       if (msg.includes("wow") || msg.includes("oh")) return "Yeah 👍";
       if (msg.includes("your name") || msg.includes("who are you") || msg.includes("what is your name?")) return "I am Divine AI 🤖";

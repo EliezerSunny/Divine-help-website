@@ -129,6 +129,21 @@
       margin-bottom: 10px;
     }
     
+    @keyframes fadeSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.bot-message.animate {
+  animation: fadeSlideIn 0.5s ease forwards;
+}
+    
    /* Chat Bot Ends */ 
 
 
